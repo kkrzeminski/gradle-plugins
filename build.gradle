@@ -1,0 +1,39 @@
+apply plugin: 'groovy'
+apply plugin: 'maven-publish'
+
+sourceCompatibility = 1.6
+version = '0.4'
+group = 'pl.ivmx.gradle.plugins'
+description = 'Find class duplicates in given configuraitons'
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+
+dependencies {
+    compile gradleApi()
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allSource
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            credentials {
+                username "admin"
+                password "password"
+            }
+            url "http://10.5.1.95:8081/artifactory/libs-release-local"
+        }
+    }
+}
