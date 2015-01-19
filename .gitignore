@@ -1,5 +1,15 @@
+# Created by https://www.gitignore.io
+
+### Gradle ###
 .gradle
 build/
 
 # Ignore Gradle GUI config
 gradle-app.setting
+
+### Intellij ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
+*.iml
+
+## Directory-based project format:
+.idea/
