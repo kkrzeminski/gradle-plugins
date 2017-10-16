@@ -1,8 +1,8 @@
 apply plugin: 'groovy'
 apply plugin: 'maven-publish'
 
-sourceCompatibility = 1.6
-version = '0.4'
+sourceCompatibility = 1.8
+version = '0.5'
 group = 'pl.ivmx.gradle.plugins'
 description = 'Find class duplicates in given configuraitons'
 
@@ -30,10 +30,10 @@ publishing {
     repositories {
         maven {
             credentials {
-                username "admin"
-                password "password"
+                username "dev"
+                password "artifactory123"
             }
-            url "http://10.5.1.95:8081/artifactory/libs-release-local"
+            url "http://artifactory/artifactory/libs-release-local"
         }
     }
 }
